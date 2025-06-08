@@ -18,7 +18,7 @@ class Node {
         next = nullptr;
     }
 };
- Node* CreateFromArray(vector<int> arr){ //CREATING LINKEDLIST FROM ARRAY FUNCTION
+ Node* CreateFromArray(vector<int> arr){ //CREATING LINKEDLIST FROM ARRAY FUNCTION // TC= O(n)
     int n= arr.size();
     if(n==0) return NULL;
      Node * head =new Node(arr[0]);
@@ -29,7 +29,16 @@ class Node {
      }
      return head;
  }
- void print(Node* head){ // PRINT FUNCTION 
+ int length(Node* head){
+    int len=0;
+    Node* current = head;
+    while(current!=NULL){
+        len++;
+        current=current->next;
+    }
+    return len;
+ }
+ void print(Node* head){ // PRINT FUNCTION // TC= O(n)
     Node* current = head;
     while(current!=NULL){
         cout<<current->data<<" ";
@@ -41,6 +50,8 @@ int main(){
     vector<int> arr = {1,2,3,4,5};
     Node* head= CreateFromArray(arr);
     print(head);
+    cout<<endl;
+    cout<<"length= "<<length(head)<<endl;
     return 0;
-
 }
+
