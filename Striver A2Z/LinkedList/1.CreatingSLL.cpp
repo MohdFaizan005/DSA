@@ -29,7 +29,7 @@ class Node {
      }
      return head;
  }
- int length(Node* head){
+ int length(Node* head){ //LENGTH FUNCTION // TC= O(n)
     int len=0;
     Node* current = head;
     while(current!=NULL){
